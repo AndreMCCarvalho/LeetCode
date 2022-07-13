@@ -1,4 +1,6 @@
-class Solution {
+package one;
+public class PlusOne
+{
 
     public static void main(String[] args) {
         System.out.println("Here");
