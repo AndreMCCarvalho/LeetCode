@@ -11,18 +11,19 @@ public class BinaryTreeInorderTraversal
     }
 
     public List<Integer> inorderTraversal(TreeNode root){
-        List<Integer> result = new ArrayList<>();
-        if(root.left != null){
-            result.add(root.left.val);
-            inorderTraversal(root.left);
+        List<Integer> res = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode curr = root;
+        while (curr != null || !stack.isEmpty()) {
+            while (curr != null) {
+                stack.push(curr);
+                curr = curr.left;
+            }
+            curr = stack.pop();
+            res.add(curr.val);
+            curr = curr.right;
         }
-        result.add(root.val);
-        if(root.right != null){
-            result.add(root.right.val);
-            inorderTraversal(root.right);
-        }
-
-        return result;
+        return res;
     }
 
 }
