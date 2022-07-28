@@ -22,7 +22,3 @@ public class SameTree
     }
 
 }
-
-
-//[1,2]
-//[1,null,2]
