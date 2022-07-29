@@ -10,30 +10,16 @@ public class SymmetricTree
 
     }
 
-    public boolean isSymmetric(TreeNode root){
-        if(root == null) return true;
-        Stack<Integer> values = new Stack<>();
-
-        postOrderTraversal(root, values);
-        customOrderTraversal(root, values);
-
-        return values.isEmpty();
+    public boolean isSymmetric(TreeNode root) {
+        return root==null || isSymmetricHelp(root.left, root.right);
     }
 
-    private void postOrderTraversal(TreeNode root, Stack<Integer> values){
-        if(root == null) return;
-        postOrderTraversal(root.left, values);
-        postOrderTraversal(root.right, values);
-        values.push(root.val);
-    }
-
-    private void customOrderTraversal(TreeNode root, Stack<Integer> values){
-        if(root == null) return;
-        customOrderTraversal(root.right, values);
-        customOrderTraversal(root.left, values);
-        if(values.peek() == root.val){
-            values.pop();
-        }
+    private boolean isSymmetricHelp(TreeNode left, TreeNode right){
+        if(left==null || right==null)
+            return left==right;
+        if(left.val!=right.val)
+            return false;
+        return isSymmetricHelp(left.left, right.right) && isSymmetricHelp(left.right, right.left);
     }
 
 }
