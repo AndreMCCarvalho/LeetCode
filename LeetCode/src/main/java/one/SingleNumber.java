@@ -6,7 +6,7 @@ public class SingleNumber {
 
     public static void main(String[] args)
     {
-        new SingleNumber().singleNumber(new int[]{2,2,1});
+        new SingleNumber().singleNumber(new int[]{2,1,2});
     }
 
     public int singleNumber(int[] nums){
