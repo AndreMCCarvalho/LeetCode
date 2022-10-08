@@ -1,4 +1,4 @@
-package one;
+package main.java.one;
 
 public class ListNode {
 
