@@ -20,7 +20,7 @@ public class ContainsDuplicate {
         return false;
     }
 
-    public boolean containsDuplicate(int[] nums){
+    public boolean containsDuplicate2(int[] nums){
         Set<Integer> distinct = new HashSet<Integer>();
 
         for(int i : nums){
